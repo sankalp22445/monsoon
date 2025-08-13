@@ -1,0 +1,11 @@
+<launch>
+
+  <!-- Start turtlesim simulation -->
+  <node pkg="turtlesim" type="turtlesim_node" name="sim" output="screen"/>
+
+  <!-- Your belief robot node -->
+  <node pkg="robot_status_estimation" type="belief_main_robot.py" name="belief_main_robot" output="screen"/>
+
+
+  
+</launch>
