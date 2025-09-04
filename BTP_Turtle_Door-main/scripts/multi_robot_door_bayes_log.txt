@@ -1,0 +1,160 @@
+Multi-Robot Door Bayes Filter Log
+===============================
+
+
+--- robot1 Log ---
+robot1: Moving to door1 at (3.0, 3.0)
+robot1: Decided to push door1
+robot1: Pushed door1 and observed it's open
+robot1: BAYES FILTER STEP 1 - Prior beliefs for door1: P(open)=0.500000, P(closed)=0.500000
+robot1: BAYES FILTER STEP 2 - After prediction for door1: bel̄(open)=0.900000, bel̄(closed)=0.100000
+robot1: BAYES FILTER STEP 3 - Final posterior beliefs for door1: P(open|z_t,u_t)=0.964286, P(closed|z_t,u_t)=0.035714
+robot1: COMMUNICATION TRIGGERED: Door door1 believed to open after push (closed → open)
+robot1: Can pass through door1
+
+--- robot2 Log ---
+robot2: Moving to door4 at (9.0, 7.0)
+robot2: Decided to do nothing door4
+robot2: Observed door4 is closed
+robot2: BAYES FILTER STEP 1 - Prior beliefs for door4: P(open)=0.500000, P(closed)=0.500000
+robot2: BAYES FILTER STEP 2 - After prediction for door4: bel̄(open)=0.500000, bel̄(closed)=0.500000
+robot2: BAYES FILTER STEP 3 - Final posterior beliefs for door4: P(open|z_t,u_t)=0.333333, P(closed|z_t,u_t)=0.666667
+robot2: No communication needed - action was 'do nothing', not 'push'
+robot2: Cannot pass through door4 (belief: 0.333333)
+
+--- robot1 Log ---
+robot1: No communication with robot2 - out of range
+robot1: Moving to door5 at (5.5, 5.5)
+robot1: Decided to push door5
+robot1: Pushed door5 and observed it's open
+robot1: BAYES FILTER STEP 1 - Prior beliefs for door5: P(open)=0.500000, P(closed)=0.500000
+robot1: BAYES FILTER STEP 2 - After prediction for door5: bel̄(open)=0.900000, bel̄(closed)=0.100000
+robot1: BAYES FILTER STEP 3 - Final posterior beliefs for door5: P(open|z_t,u_t)=0.964286, P(closed|z_t,u_t)=0.035714
+robot1: COMMUNICATION TRIGGERED: Door door5 believed to open after push (closed → open)
+robot1: Can pass through door5
+
+--- robot2 Log ---
+robot2: No communication triggered - belief change doesn't warrant sharing
+robot2: Moving to door4 at (9.0, 7.0)
+robot2: Decided to push door4
+robot2: Pushed door4 and observed it's open
+robot2: BAYES FILTER STEP 1 - Prior beliefs for door4: P(open)=0.333333, P(closed)=0.666667
+robot2: BAYES FILTER STEP 2 - After prediction for door4: bel̄(open)=0.866667, bel̄(closed)=0.133333
+robot2: BAYES FILTER STEP 3 - Final posterior beliefs for door4: P(open|z_t,u_t)=0.951220, P(closed|z_t,u_t)=0.048780
+robot2: COMMUNICATION TRIGGERED: Door door4 believed to open after push (closed → open)
+robot2: Can pass through door4
+
+--- robot1 Log ---
+robot1: No communication with robot2 - out of range
+robot1: Moving to door4 at (9.0, 7.0)
+robot1: Decided to push door4
+robot1: Pushed door4 and observed it's open
+robot1: BAYES FILTER STEP 1 - Prior beliefs for door4: P(open)=0.500000, P(closed)=0.500000
+robot1: BAYES FILTER STEP 2 - After prediction for door4: bel̄(open)=0.900000, bel̄(closed)=0.100000
+robot1: BAYES FILTER STEP 3 - Final posterior beliefs for door4: P(open|z_t,u_t)=0.964286, P(closed|z_t,u_t)=0.035714
+robot1: COMMUNICATION TRIGGERED: Door door4 believed to open after push (closed → open)
+robot1: Can pass through door4
+
+--- robot2 Log ---
+robot2: No communication with robot1 - out of range
+robot2: COMMUNICATION: Receiving belief update from robot1 for door4
+robot2: BELIEF FUSION - Before merge door4: P_self(open)=0.951220, P_self(closed)=0.048780
+robot2: BELIEF FUSION - Other robot belief door4: P_other(open)=0.964286, P_other(closed)=0.035714
+robot2: BELIEF FUSION - After merge door4: P_fused(open)=0.956446, P_fused(closed)=0.043554
+robot2: BELIEF FUSION - Change in belief for door4: Δopen=+0.005226, Δclosed=-0.005226
+
+--- robot2 Log ---
+robot2: Moving to door5 at (5.5, 5.5)
+robot2: Decided to do nothing door5
+robot2: Observed door5 is open
+robot2: BAYES FILTER STEP 1 - Prior beliefs for door5: P(open)=0.500000, P(closed)=0.500000
+robot2: BAYES FILTER STEP 2 - After prediction for door5: bel̄(open)=0.500000, bel̄(closed)=0.500000
+robot2: BAYES FILTER STEP 3 - Final posterior beliefs for door5: P(open|z_t,u_t)=0.750000, P(closed|z_t,u_t)=0.250000
+robot2: No communication needed - action was 'do nothing', not 'push'
+robot2: Can pass through door5
+
+--- robot1 Log ---
+robot1: Moving to door2 at (8.0, 2.0)
+robot1: Decided to push door2
+robot1: Pushed door2 and observed it's closed
+robot1: BAYES FILTER STEP 1 - Prior beliefs for door2: P(open)=0.500000, P(closed)=0.500000
+robot1: BAYES FILTER STEP 2 - After prediction for door2: bel̄(open)=0.900000, bel̄(closed)=0.100000
+robot1: BAYES FILTER STEP 3 - Final posterior beliefs for door2: P(open|z_t,u_t)=0.818182, P(closed|z_t,u_t)=0.181818
+robot1: COMMUNICATION TRIGGERED: Door door2 believed to open after push (closed → open)
+robot1: Can pass through door2
+
+--- robot2 Log ---
+robot2: No communication triggered - belief change doesn't warrant sharing
+robot2: COMMUNICATION: Receiving belief update from robot1 for door2
+robot2: BELIEF FUSION - Before merge door2: P_self(open)=0.500000, P_self(closed)=0.500000
+robot2: BELIEF FUSION - Other robot belief door2: P_other(open)=0.818182, P_other(closed)=0.181818
+robot2: BELIEF FUSION - After merge door2: P_fused(open)=0.627273, P_fused(closed)=0.372727
+robot2: BELIEF FUSION - Change in belief for door2: Δopen=+0.127273, Δclosed=-0.127273
+
+--- robot2 Log ---
+robot2: Moving to door1 at (3.0, 3.0)
+robot2: Decided to do nothing door1
+robot2: Observed door1 is open
+robot2: BAYES FILTER STEP 1 - Prior beliefs for door1: P(open)=0.500000, P(closed)=0.500000
+robot2: BAYES FILTER STEP 2 - After prediction for door1: bel̄(open)=0.500000, bel̄(closed)=0.500000
+robot2: BAYES FILTER STEP 3 - Final posterior beliefs for door1: P(open|z_t,u_t)=0.750000, P(closed|z_t,u_t)=0.250000
+robot2: No communication needed - action was 'do nothing', not 'push'
+robot2: Can pass through door1
+
+--- robot1 Log ---
+robot1: Moving to door3 at (2.0, 8.0)
+robot1: Decided to push door3
+robot1: Pushed door3 and observed it's open
+robot1: BAYES FILTER STEP 1 - Prior beliefs for door3: P(open)=0.500000, P(closed)=0.500000
+robot1: BAYES FILTER STEP 2 - After prediction for door3: bel̄(open)=0.900000, bel̄(closed)=0.100000
+robot1: BAYES FILTER STEP 3 - Final posterior beliefs for door3: P(open|z_t,u_t)=0.964286, P(closed|z_t,u_t)=0.035714
+robot1: COMMUNICATION TRIGGERED: Door door3 believed to open after push (closed → open)
+robot1: Can pass through door3
+
+--- robot2 Log ---
+robot2: No communication triggered - belief change doesn't warrant sharing
+robot2: Moving to door2 at (8.0, 2.0)
+robot2: Decided to do nothing door2
+robot2: Observed door2 is closed
+robot2: BAYES FILTER STEP 1 - Prior beliefs for door2: P(open)=0.627273, P(closed)=0.372727
+robot2: BAYES FILTER STEP 2 - After prediction for door2: bel̄(open)=0.627273, bel̄(closed)=0.372727
+robot2: BAYES FILTER STEP 3 - Final posterior beliefs for door2: P(open|z_t,u_t)=0.456954, P(closed|z_t,u_t)=0.543046
+robot2: No communication needed - action was 'do nothing', not 'push'
+robot2: Cannot pass through door2 (belief: 0.456954)
+
+--- robot2 Log ---
+robot2: No communication triggered - belief change doesn't warrant sharing
+robot2: Moving to door2 at (8.0, 2.0)
+robot2: Decided to push door2
+robot2: Pushed door2 and observed it's closed
+robot2: BAYES FILTER STEP 1 - Prior beliefs for door2: P(open)=0.456954, P(closed)=0.543046
+robot2: BAYES FILTER STEP 2 - After prediction for door2: bel̄(open)=0.891391, bel̄(closed)=0.108609
+robot2: BAYES FILTER STEP 3 - Final posterior beliefs for door2: P(open|z_t,u_t)=0.804062, P(closed|z_t,u_t)=0.195938
+robot2: COMMUNICATION TRIGGERED: Door door2 believed to open after push (closed → open)
+robot2: Can pass through door2
+
+--- robot2 Log ---
+robot2: No communication with robot1 - out of range
+robot2: Moving to door3 at (2.0, 8.0)
+robot2: Decided to do nothing door3
+robot2: Observed door3 is open
+robot2: BAYES FILTER STEP 1 - Prior beliefs for door3: P(open)=0.500000, P(closed)=0.500000
+robot2: BAYES FILTER STEP 2 - After prediction for door3: bel̄(open)=0.500000, bel̄(closed)=0.500000
+robot2: BAYES FILTER STEP 3 - Final posterior beliefs for door3: P(open|z_t,u_t)=0.750000, P(closed|z_t,u_t)=0.250000
+robot2: No communication needed - action was 'do nothing', not 'push'
+robot2: Can pass through door3
+
+==================================================
+FINAL SUMMARY
+==================================================
+robot1 passed through doors: ['door1', 'door5', 'door4', 'door2', 'door3']
+robot2 passed through doors: ['door4', 'door5', 'door1', 'door2', 'door3']
+robot1 can pass all doors: True
+robot2 can pass all doors: True
+
+Final beliefs for all doors:
+door1: robot1 P(open)=0.964286, robot2 P(open)=0.750000
+door2: robot1 P(open)=0.818182, robot2 P(open)=0.804062
+door3: robot1 P(open)=0.964286, robot2 P(open)=0.750000
+door4: robot1 P(open)=0.964286, robot2 P(open)=0.956446
+door5: robot1 P(open)=0.964286, robot2 P(open)=0.750000
